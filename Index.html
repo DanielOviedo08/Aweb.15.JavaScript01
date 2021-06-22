@@ -6,18 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        document.writeln ("<h1>Hola mundo desde Java Script</h1>");
+        
+        var Nombre="";
+        var Edad=0;
+        var Localidad="";
+        var Profesión="";
+        var Fecha=new Date();
+        var Horas=Fecha.getHours();
+        var mensaje="Bienvenidos "
+        
+        if (Horas <= "12"){
+            alert(mensaje+"Buenos Dias"+"\n"+ Fecha );
+        }
+       else if ((Horas >"12") || (Horas<="18")){
+                alert(mensaje+"Buenas Tardes"+"\n"+ Fecha);
+        }else if((Horas >"18") || (Horas<="23")){
+            alert(mensaje+"Buenas Noches"+"\n"+ Fecha);
+        }
+
+        
+
+        Nombre= prompt("¿Cual es tu nombre?");
+        Edad=prompt("¿Cual es tu edad?");
+        Localidad=prompt("¿Cual es tu localidad?");
+        Profesión=prompt("¿Cual es tu profesión?");
+
+        var respuesta=confirm("¿Los datos son correctos?"+"\n Nombre="+Nombre+
+                                                          "\n Edad="+Edad+
+                                                          "\n Localidad="+Localidad+
+                                                          "\n Profesion="+Profesión);
+        if(respuesta){
+        
         document.writeln("<center>")
         document.writeln("<table border='1'>");
 //Renglon 1
         document.writeln("<tr>");
             //col 1
-            document.writeln("<td rowspan= '4'>");
+            document.writeln("<td rowspan= '4' width='25%'>");
                 document.writeln(" FOTO ");
             document.writeln("</td>");
             //col2 
                 document.writeln("<td>");
-                        document.writeln("<b>Nombre:</b> Daniel Oviedo")
+                        document.writeln("<b>Nombre:</b>"+Nombre)
                 document.writeln("</td>");
 
         document.writeln("</tr>");
@@ -25,25 +55,32 @@
 //Renglon 2
             document.writeln("<tr>");
                 document.writeln("<td>");
-                     document.writeln("<b>Edad:</b> 18 años");
+                     document.writeln("<b>Edad:</b>"+Edad+"años");
                 document.writeln("</td>");
                 document.writeln("</tr>");
              
 //Renglon 3
                 document.writeln("<tr>");
                     document.writeln("<td>");
-                         document.writeln("<b>Localidad:</b> Temixco");
+                         document.writeln("<b>Localidad:</b>"+Localidad);
                     document.writeln("</td>");
                 document.writeln("</tr>");
                     
 //Renglon 4
                     document.writeln("<tr>");
                         document.writeln("<td>");
-                             document.writeln("<b>Profesión:</b> En Proceso");
+                             document.writeln("<b>Profesión:</b>"+Profesión);
                         document.writeln("</td>");
                     document.writeln("</tr>");
                         document.writeln("</table>");
                         document.writeln("</center>")
+        }else{
+            alert("Dijo que NO")
+        }
+        
+
+   
+       
     </script>
 </head>
 <body>
